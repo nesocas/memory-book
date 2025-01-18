@@ -1,0 +1,214 @@
+/* Styles body element, contains all contents of page */
+@font-face {
+    font-family: 'Teacher';
+    src: url('./fonts/Teacher.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Teacher', sans-serif; /* sets the font style */
+    background: linear-gradient(to right, #f8c6d0, #d4a59a);
+    margin: 0; /* removes default margin around body */
+    padding: 0; /* removes default padding around body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 23px;
+}
+
+#homepage {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff5ee;
+    border: 2px solid #d3b8ae;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the page */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset to truly center it */
+    font-size: 15px; /* Adjust font size */
+    color: #fff5ee; /* Choose a color */
+    font-family: 'Teacher', sans-serif; /* Use the same font */
+    text-align: center; /* Align text in the center */
+    z-index: 10; /* Ensure it is above other content like hearts */
+}
+
+#homepage h1 { /* styles h1 (level 1 heading) element */
+    color: #be847f; /* text color */
+    text-align: center; /* centers text horizontally */
+    margin: 0;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.106);
+}
+
+#homepage p { /* styles paragraph (p) element */
+    color: #d4a59a;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.106);
+}
+
+#homepage button {
+    display: block;
+    margin: 20px auto; /* Centered horizontally and spaced below timeline */
+    padding: 10px 20px;
+    font-family: 'Teacher', sans-serif; /* sets the font style */
+    font-size: 20px;
+    color: #fff;
+    background-color: #d4a59a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#homepage button:hover {
+    transform: scale(1.1); /* Zoom effect */
+    background-color: #c28a7e;
+}
+
+/* General styling for the hearts container */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensures hearts don't go out of the container */
+    z-index: -1; /* Keeps it behind the main content */
+}
+
+/* Styling for individual hearts */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    transform: rotate(45deg);
+    animation: fall 6s linear infinite, float 6s linear infinite;
+    border-radius: 0;
+    opacity: 0;
+}
+
+/* Create the top parts of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+/* Falling animation */
+@keyframes fall {
+    0% {
+        top: -20px;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Floating motion (optional for a bouncy effect) */
+@keyframes float {
+    0% {
+        transform: translateX(0) rotate(45deg);
+    }
+    50% {
+        transform: translateX(10px) rotate(45deg);
+    }
+    100% {
+        transform: translateX(-10px) rotate(45deg);
+    }
+}
+
+/* Position each heart randomly using nth-child */
+.heart:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(6) {
+    left: 20%;
+    animation-duration: 6s;
+    animation-delay: 5s;
+}
+.heart:nth-child(7) {
+    left: 40%;
+    animation-duration: 6s;
+    animation-delay: 6s;
+}
+.heart:nth-child(8) {
+    left: 60%;
+    animation-duration: 6s;
+    animation-delay: 8s;
+}
+.heart:nth-child(9) {
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 7s;
+}
+
+/* Instagram Icon Styling */
+.insta-icon {
+    position: fixed;
+    bottom: 20px; /* Adjust distance from the bottom */
+    right: 20px; /* Adjust distance from the right */
+    font-size: 20px; /* Icon size */
+    background-color: #ffffff; /* Icon background (optional) */
+    padding: 10px; /* Padding around the icon */
+    border-radius: 50%; /* Circular background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Soft shadow around the icon */
+    color: #ff6b81; /* Instagram's iconic color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+}
+
+/* Icon Hover Effect */
+.insta-icon:hover {
+    background-color: #ff6b81; /* Change background on hover */
+    color: #fff; /* Change icon color to white */
+}

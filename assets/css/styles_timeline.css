@@ -1,0 +1,300 @@
+@font-face {
+    font-family: 'Teacher';
+    src: url('./fonts/Teacher.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Teacher', sans-serif; /* sets the font style */
+    background: linear-gradient(to right, #f8c6d0, #d4a59a);
+    margin: 0; /* removes default margin around body */
+    padding: 0; /* removes default padding around body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 23px;
+}
+
+button {
+    display: block;
+    margin: 20px auto; /* Centered horizontally and spaced below timeline */
+    padding: 10px 20px;
+    font-family: 'Teacher', sans-serif; /* sets the font style */
+    font-size: 20px;
+    color: #fff;
+    background-color: #d4a59a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+p {
+    color: #fff5ee;
+    text-align: center;
+    font-size: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.292);
+}
+
+button:hover {
+    transform: scale(1.1); /* Zoom effect */
+    background-color: #c28a7e;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 800px;
+    background-color: #f7e3ed;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the timeline container */
+}
+
+h1 {
+    color: #d08777;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.292);
+}
+
+.back-to-homepage {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: #d4a59a; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Make text bold */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.back-to-homepage:hover {
+    background-color: #c28a7e; /* Darker background on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Define the photo grid */
+    gap: 10px; /* Space between photos */
+    margin: 20px auto;
+    max-width: 800px; /* Limit the grid width */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0) 1px, transparent 1px);
+    background-size: 100px 100px; /* Adjust grid square size */
+    background-position: center; /* Center the grid */
+}
+
+/* Adjust photo appearance */
+.photo img {
+    width: 100%; /* Fit photo in grid cell */
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo img:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.photo-frame {
+    border: 5px solid #c28a7e4e; /* Frame border */
+    border-radius: 15px; /* Rounded frame corners */
+    padding: 10px; /* Space between the photos and the frame */
+    display: inline-block; /* Ensure the frame wraps tightly around the grid */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+    margin: 20px auto; /* Center frame on the page */
+}
+
+  /* Modal (expanded photo view) styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: #fde5e5bd;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(247, 239, 239);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #photoDetails {
+    margin-top: 20px;
+  }
+  
+  #photoTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  #photoDate {
+    font-size: 18px;
+    color: #d18a7a;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  #photoDescription {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+  /* Styling for individual hearts */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    transform: rotate(45deg);
+    animation: fall 6s linear infinite, float 6s linear infinite;
+    border-radius: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* Create the top parts of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+/* Falling animation */
+@keyframes fall {
+    0% {
+        top: -20px;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Floating motion (optional for a bouncy effect) */
+@keyframes float {
+    0% {
+        transform: translateX(0) rotate(45deg);
+    }
+    50% {
+        transform: translateX(10px) rotate(45deg);
+    }
+    100% {
+        transform: translateX(-10px) rotate(45deg);
+    }
+}
+
+/* Position each heart randomly using nth-child */
+.heart:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(6) {
+    left: 20%;
+    animation-duration: 6s;
+    animation-delay: 5s;
+}
+.heart:nth-child(7) {
+    left: 40%;
+    animation-duration: 6s;
+    animation-delay: 6s;
+}
+.heart:nth-child(8) {
+    left: 60%;
+    animation-duration: 6s;
+    animation-delay: 8s;
+}
+.heart:nth-child(9) {
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 7s;
+}
