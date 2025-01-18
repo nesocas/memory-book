@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Timeline</title>
+    <link rel="stylesheet" href="assets/css/styles_timeline.css">
+    <script src="assets/css/timeline.js"></script>
+</head>
+<body>
+    <div id="timeline">
+        <div class="hearts">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+        <div class="photo-frame">
+        <h1>click on each photo :)</h1>
+            <div class="photo-grid">
+            <div class="photo" onclick="openPhoto(0)">
+                <img src="assets/css/img/photo1.jpeg" alt="Photo 1">
+            </div>
+            <div class="photo" onclick="openPhoto(1)">
+                <img src="assets/css/img/photo2.JPG" alt="Photo 2">
+            </div>
+            <div class="photo" onclick="openPhoto(2)">
+                <img src="assets/css/img/photo3.jpeg" alt="Photo 3">
+            </div>
+            <div class="photo" onclick="openPhoto(3)">
+                <img src="assets/css/img/photo4.jpeg" alt="Photo 4">
+            </div>
+            <div class="photo" onclick="openPhoto(4)">
+                <img src="assets/css/img/photo5.jpeg" alt="Photo 5">
+            </div>
+            <div class="photo" onclick="openPhoto(5)">
+                <img src="assets/css/img/photo6.jpeg" alt="Photo 6">
+            </div>
+            <div class="photo" onclick="openPhoto(6)">
+                <img src="assets/css/img/photo7.jpg" alt="Photo 7">
+            </div>
+            <div class="photo" onclick="openPhoto(7)">
+                <img src="assets/css/img/photo8.jpeg" alt="Photo 8">
+            </div>
+            <div class="photo" onclick="openPhoto(8)">
+                <img src="assets/css/img/photo9.jpeg" alt="Photo 9">
+            </div>
+            <div class="photo" onclick="openPhoto(9)">
+                <img src="assets/css/img/photo10.jpeg" alt="Photo 10">
+            </div>
+            <div class="photo" onclick="openPhoto(10)">
+                <img src="assets/css/img/photo11.jpeg" alt="Photo 11">
+            </div>
+            <div class="photo" onclick="openPhoto(11)">
+                <img src="assets/css/img/photo12.jpeg" alt="Photo 12">
+            </div>
+            </div>
+        </div>
+        <!-- Modal or expanded view for the photo -->
+        <div id="photoModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <img id="modalImage" src="" alt="Selected Photo">
+            <div id="photoDetails">
+              <h2 id="photoTitle">Title</h2>
+              <p id="photoDate">Date</p>
+              <p id="photoDescription">Description</p>
+            </div>
+          </div>
+        </div>
+        <p>done by inês <3</p>
+      </div>
+      <a href="index.html" class="back-to-homepage">Home</a>
+</body>
+</html>
